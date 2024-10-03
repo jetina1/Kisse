@@ -22,8 +22,8 @@
     <!-- @can('user_management_access') -->
 
     <!-- @endcan -->
-    <li>
-    <li class="nav-item">
+
+    <!-- <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUserManagement" aria-expanded="true"
             aria-controls="collapseUserManagement">
             <span>{{ __('User Management') }}</span>
@@ -40,8 +40,8 @@
                     href="{{ route('admin.users.index') }}"> <i class="fa fa-user mr-2"></i> {{ __('Users') }}</a>
             </div>
         </div>
-    </li>
-    </li>
+    </li> -->
+
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseExpense" aria-expanded="true"
             aria-controls="collapseExpense">

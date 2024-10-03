@@ -10,6 +10,7 @@ use Hash;
 
 class AdminController extends Controller
 {
+
     public function AdminProfile()
     {
 

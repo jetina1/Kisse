@@ -55,7 +55,9 @@ Route::group(['middleware' => 'isAdmin', 'prefix' => 'admin', 'as' => 'admin.'],
 });
 
 Auth::routes();
-
+Route::get('/user/dashbord', function () {
+    return view('user.user_dashboard');
+})->name('user.dashboard');
 Route::get('/home', function () {
     return view('home');
 })->name('home');

@@ -27,6 +27,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Currency::class);
     }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
+    }
+
+    // Check if the user has a specific role
+    public function hasRole($role)
+    {
+        return $this->roles()->where('title', $role)->exists();
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -46,10 +56,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class, 'role_user');
-    }
 
 
 }

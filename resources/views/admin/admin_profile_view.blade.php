@@ -1,9 +1,7 @@
-<head>
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script> -->
-</head>
+<!DOCTYPE html>
+<html lang="en">
+@include('body.head')
+@include('body.header')
 
 <body>
     <div class="main-wrapper">
@@ -131,7 +129,9 @@
         </div>
     </div>
 </body>
-<style>
+@include('body.footer')
+</html>
+<!-- <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f8ff;
@@ -240,4 +240,4 @@
     .me-2 {
         margin-right: 0.5rem;
     }
-</style>
+</style> -->

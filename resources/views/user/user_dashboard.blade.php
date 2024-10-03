@@ -10,7 +10,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        @include('body.sidebar')
+        @include('user.body.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

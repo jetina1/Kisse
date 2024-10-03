@@ -1,13 +1,26 @@
 <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>Laravel</title>
+    <title>Admin Page</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ asset('backend/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+
 
     <!-- Styles -->
+
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
         html {
@@ -17,6 +30,106 @@
 
         body {
             margin: 0
+        }
+
+        .main-wrapper {
+            padding: 20px;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-body {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            /* White background for the card */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #0044cc;
+            /* Blue title */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h6.card-title {
+            font-size: 18px;
+        }
+
+        label.form-label {
+            color: #0044cc;
+            /* Blue labels */
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            border: 1px solid #0044cc;
+            /* Blue borders for input fields */
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #e6f0ff;
+            /* Light blue background for inputs */
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #0044cc;
+            border-color: #0044cc;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #003399;
+            border-color: #003399;
+        }
+
+        .social-links a {
+            border: 1px solid #0044cc;
+            color: #0044cc;
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            background-color: #0044cc;
+            color: white;
+        }
+
+        .wd-100 {
+            width: 100px;
+        }
+
+        .wd-80 {
+            width: 80px;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .text-muted {
+            color: #666;
+        }
+
+        .mt-3 {
+            margin-top: 1rem;
+        }
+
+        .me-2 {
+            margin-right: 0.5rem;
         }
 
         a {
