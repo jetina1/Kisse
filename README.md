@@ -1,4 +1,4 @@
-# Laravel 8 - Expense application
+ Kise Expense application
 
 ## Screenshots
 
@@ -11,7 +11,7 @@
 Clone the project
 
 ```bash
-  git clone https://github.com/abdulaziz-m5u/laravel-expense-app.git project-name
+  git clone https://github.com/jetina1/Kisse.git project-name
 ```
 
 Go to the project directory
@@ -35,6 +35,9 @@ Go to the project directory
 ```
 
 #### Login
-
--   email = admin@example.com
--   password = 123
+as an admin
+-   email = admin@gmail.com
+-   password = admin123
+as an user
+-   email = user@gmail.com
+-   password = user123
