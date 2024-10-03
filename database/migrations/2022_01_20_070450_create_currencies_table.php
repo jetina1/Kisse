@@ -19,12 +19,31 @@ class CreateCurrenciesTable extends Migration
             $table->string('symbol')->nullable();
             $table->string('money_format_thousands')->nullable();
             $table->string('money_format_decimal')->nullable();
-            
+
             $table->timestamps();
             $table->softDeletes();
 
             $table->index(['deleted_at']);
         });
+        DB::table('currencies')->insert([
+            [
+                'title' => 'Ethiopian Birr',
+                'symbol' => 'ብር', // The symbol for Ethiopian Birr
+                'money_format_thousands' => ',',
+                'money_format_decimal' => '.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'US Dollar',
+                'symbol' => '$',
+                'money_format_thousands' => ',',
+                'money_format_decimal' => '.',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+
+        ]);
     }
 
     /**
@@ -35,5 +54,6 @@ class CreateCurrenciesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('currencies');
+        DB::table('currencies')->whereIn('title', ['US Dollar', 'Ethiopian Birr'])->delete();
     }
 }

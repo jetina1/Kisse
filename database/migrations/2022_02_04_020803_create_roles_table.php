@@ -18,6 +18,18 @@ class CreateRolesTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
+        DB::table('roles')->insert([
+            [
+                'title' => 'Admin',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'title' => 'User',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ]);
     }
 
     /**

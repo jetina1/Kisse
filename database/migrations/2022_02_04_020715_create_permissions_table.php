@@ -18,6 +18,11 @@ class CreatePermissionsTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
+        DB::table('permissions')->insert([
+            ['title' => 'View', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Edit', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'Delete', 'created_at' => now(), 'updated_at' => now()],
+        ]);
     }
 
     /**

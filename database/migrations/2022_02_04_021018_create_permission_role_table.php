@@ -19,6 +19,15 @@ class CreatePermissionRoleTable extends Migration
             $table->foreignId('role_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
+        DB::table('permission_role')->insert([
+            [
+                'permission_id' => 1,
+                'role_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+            // Add more associations as needed
+        ]);
     }
 
     /**

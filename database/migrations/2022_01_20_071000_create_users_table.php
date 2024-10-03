@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUsersTable extends Migration
 {
@@ -23,8 +24,16 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::table('users')->insert([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin123'), // Make sure to hash the password
+            'currency_id' => 1, // Assuming you have a currency with ID 1
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
-    
+
 
     /**
      * Reverse the migrations.

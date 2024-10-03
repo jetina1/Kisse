@@ -19,6 +19,14 @@ class CreateRoleUserTable extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
+        DB::table('role_user')->insert([
+            [
+                'role_id' => 1, // Assuming role ID 1 exists
+                'user_id' => 1, // Assuming user ID 1 exists
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 
     /**

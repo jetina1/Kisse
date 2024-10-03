@@ -20,6 +20,33 @@ class CreateIncomeCategoriesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
+        DB::table('income_categories')->insert([
+            [
+                'name' => 'Salary',
+                'user_id' => 1,  //  by admin
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Freelancing',
+                'user_id' => 1,  //  by admin
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Bonus',
+                'user_id' => 1,  // by admin
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Gift',
+                'user_id' => 1,  // by admin
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+
+        ]);
     }
 
     /**

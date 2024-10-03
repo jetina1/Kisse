@@ -20,6 +20,40 @@ class CreateExpenseCategoriesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
+        DB::table('expense_categories')->insert([
+            [
+                'name' => 'Food',
+                'user_id' => 1, // Replace with appropriate user id
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Home Rent',
+                'user_id' => 1, // Replace with appropriate user id
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Transport',
+                'user_id' => 1, // Replace with appropriate user id
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Clothes',
+                'user_id' => 1, // Replace with appropriate user id
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            [
+                'name' => 'Health Care',
+                'user_id' => 1, // Replace with appropriate user id
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+
+        ]);
     }
 
     /**
