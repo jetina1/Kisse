@@ -12,7 +12,7 @@ class ExpenseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function index()
     {
@@ -24,7 +24,7 @@ class ExpenseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function create()
     {
@@ -37,14 +37,15 @@ class ExpenseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(ExpenseRequest $request)
     {
         Expense::create($request->validated() + [
-                'user_id' => auth()->id(),
-                'currency_id' => auth()->user()->currency_id,
-            ]);
+            'user_id' => auth()->id(),
+            'currency_id' => auth()->user()->currency_id,
+        ]);
 
         return redirect()->route('admin.expenses.index')->with([
             'message' => 'success created !',
@@ -56,7 +57,7 @@ class ExpenseController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function show(Expense $expense)
     {
@@ -67,7 +68,7 @@ class ExpenseController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function edit(Expense $expense)
     {
@@ -81,14 +82,15 @@ class ExpenseController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(ExpenseRequest $request,Expense $expense)
+    public function update(ExpenseRequest $request, Expense $expense)
     {
         $expense->update($request->validated() + [
-                'user_id' => auth()->id(),
-                'currency_id' => auth()->user()->currency_id,
-            ]);
+            'user_id' => auth()->id(),
+            'currency_id' => auth()->user()->currency_id,
+        ]);
 
         return redirect()->route('admin.expenses.index')->with([
             'message' => 'success updated !',
@@ -100,7 +102,8 @@ class ExpenseController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Expense $expense)
     {

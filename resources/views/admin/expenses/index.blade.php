@@ -11,7 +11,6 @@
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
-            <!-- @section('content') -->
             <div class="container">
                 <div class="card shadow mb-4">
                     <div class="card-header py-3 d-flex">
@@ -87,7 +86,7 @@
         </div>
     </div>
 </body>
-<!-- @endsection -->
+
 @include('body.footer')
 
 </html>

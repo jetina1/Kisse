@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('body.head')
-
+<!-- @include('body.script') -->
 @include('body.header')
 
 <body id="page-top">
@@ -77,11 +77,3 @@
 </body>
 
 </html>
-
-<!-- -- End of Topbar  -->
-
-<!-- Begin Page Content -->
-<!-- @yield('content')****************************************88 -->
-<!-- /.container-fluid -->
-<!-- @include('body.head') -->
-<!-- @include('body.script') -->
