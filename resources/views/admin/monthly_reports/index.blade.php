@@ -116,7 +116,6 @@
                     </div>
                 </div>
             </div>
-            @stop
         </div>
     </div>
 </body>
