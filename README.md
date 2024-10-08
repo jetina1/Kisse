@@ -40,4 +40,4 @@ as an admin
 -   password = admin123
 as an user
 -   email = user@gmail.com
--   password = user123
+-   password = user1234
