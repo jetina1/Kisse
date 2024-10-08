@@ -11,6 +11,7 @@ use Hash;
 class AdminController extends Controller
 {
 
+
     public function AdminProfile()
     {
 
@@ -23,20 +24,40 @@ class AdminController extends Controller
     public function AdminProfileStore(Request $request)
     {
 
+
         $id = Auth::user()->id;
         $data = User::find($id);
         $data->name = $request->name;
         $data->email = $request->email;
         $currency_id = $request->currency_id;
         $currency = Currency::find($currency_id);
+        $user = Auth::user();
 
-        if ($request->file('photo')) {
+        // Check if a file has been uploaded
+        if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             @unlink(public_path('upload/admin_images/' . $data->photo));//used for when replacing the image
-            $filename = date('YmdHi') . $file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'), $filename);
-            $data['photo'] = $filename;
+            // Generate a unique filename for the image
+            $filename = time() . '_' . $file->getClientOriginalName();
+
+            // Move the file to the 'upload/admin_images/' folder
+            $file->move(public_path('upload/admin_images/'), $filename);
+
+            // Save the filename in the database (assuming the column is 'photo')
+            $user->photo = $filename;
         }
+
+        // Save other user data (if any)
+        $user->save();
+
+        // Redirect or respond with success message
+        // if ($request->file('photo')) {
+        //     $file = $request->file('photo');
+
+        //     $filename = date('YmdHi') . $file->getClientOriginalName();
+        //     $file->move(public_path('upload/admin_images'), $filename);
+        //     $data['photo'] = $filename;
+        // }
 
         $data->save();
         // Check if the currency exists
@@ -55,7 +76,9 @@ class AdminController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->back()->with($notification);
+        // return redirect()->back()->with($notification);
+        return redirect()->back()->with('success', 'Profile updated successfully.');
+
 
     }// End Method 
     public function AdminChangePassword(Request $request)

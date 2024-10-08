@@ -19,7 +19,7 @@
 
                                     <div>
                                         <img class="wd-100 rounded-circle"
-                                            src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
+                                            src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/' . $profileData->photo) : url('upload/default_images/no_image.jpg') }}"
                                             alt="profile">
                                         <span class="h4 ms-3 ">{{ $profileData->username }}</span>
                                     </div>
@@ -109,7 +109,7 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1" class="form-label"> </label>
                                             <img id="showImage" class="wd-80 rounded-circle"
-                                                src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.jpg') }}"
+                                                src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/' . $profileData->photo) : url('upload/admin_images/no_image.jpg') }}"
                                                 alt="profile">
                                         </div>
                                         <button type="submit" class="btn btn-primary me-2">Save Changes </button>
@@ -131,7 +131,7 @@
 </body>
 @include('body.footer')
 </html>
-<!-- <style>
+<style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f0f8ff;
@@ -150,10 +150,10 @@
         margin: 0 auto;
     }
 
-    .profile-body {
+    /* .profile-body {
         display: flex;
         gap: 20px;
-    }
+    } */
 
     .card {
         background-color: white;
@@ -167,39 +167,40 @@
         padding: 20px;
     }
 
-    .card-title {
+    /* .card-title {
         color: #0044cc;
         /* Blue title */
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
+    /* font-weight: bold;
+    margin-bottom: 20px;
+    } */
+
 
     h6.card-title {
         font-size: 18px;
     }
 
-    label.form-label {
+    /* label.form-label {
         color: #0044cc;
-        /* Blue labels */
+        Blue labels
         font-weight: bold;
         margin-bottom: 5px;
-    }
+    } */
 
-    .form-control {
+    /* .form-control {
         border: 1px solid #0044cc;
-        /* Blue borders for input fields */
+        Blue borders for input fields
         border-radius: 5px;
         padding: 10px;
         background-color: #e6f0ff;
-        /* Light blue background for inputs */
+        Light blue background for inputs
         color: #333;
-    }
+    } */
 
-    .btn-primary {
+    /* .btn-primary {
         background-color: #0044cc;
         border-color: #0044cc;
         color: white;
-    }
+    } */
 
     .btn-primary:hover {
         background-color: #003399;
@@ -237,7 +238,7 @@
         margin-top: 1rem;
     }
 
-    .me-2 {
+    /* .me-2 {
         margin-right: 0.5rem;
-    }
-</style> -->
+    } */
+</style>

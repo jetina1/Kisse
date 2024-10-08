@@ -19,7 +19,7 @@
                         <div class="col-xs-1 col-md-4 form-group">
                             <label for="year">Year</label>
                             @php
-                                $years = collect(range(2, 0))->map(function ($item) {
+                                $years = collect(range(0, 2))->map(function ($item) {
                                     return (string) date('Y') - $item;
                                 });
                                 $months = cal_info(0)['months'];
@@ -116,10 +116,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 067929b83a2e91f856f03077a2ed06c8d4519cd1
         </div>
     </div>
 </body>

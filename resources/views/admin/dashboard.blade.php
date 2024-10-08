@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('body.head')
-<!-- @include('body.script') -->
 @include('body.header')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
 <body id="page-top">
 
@@ -20,13 +21,14 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <div class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <!-- <div class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"> -->
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- </div> -->
             </div>
         </div>
 
@@ -75,5 +77,9 @@
         </div>
     </div>
 </body>
+@include('body.script')
+
+
+
 
 </html>

@@ -19,16 +19,16 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-    protected function authenticated(Request $request, $user)
-    {
-        // Check if the user has the 'Admin' role
-        if ($user->hasRole('Admin')) {
-            return redirect()->route('admin.dashboard.index');
-        }
+    // protected function authenticated(Request $request, $user)
+    // {
+    //     // Check if the user has the 'Admin' role
+    //     if ($user->hasRole('Admin')) {
+    //         return redirect()->route('admin.dashboard.index');
+    //     }
 
-        // If the user is not an admin, redirect them to the user dashboard
-        return redirect()->route('user.dashboard');
-    }
+    //     // If the user is not an admin, redirect them to the user dashboard
+    //     return redirect()->route('user.dashboard');
+    // }
     use AuthenticatesUsers;
 
     /**

@@ -53,24 +53,24 @@ Route::group(['middleware' => 'isAdmin', 'prefix' => 'admin', 'as' => 'admin.'],
     Route::get('change-password', [\App\Http\Controllers\AdminController::class, 'AdminChangePassword'])->name('change.password');
 
 });
-Route::group(['middleware' => 'isUser', 'prefix' => 'user', 'as' => 'user.'], function () {
-    Route::get('dashboard', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('dashboard.index');
-    Route::resource('currencies', \App\Http\Controllers\admin\CurrencyController::class);
-    Route::resource('expenses', \App\Http\Controllers\User\ExpenseController::class);
-    Route::resource('incomes', \App\Http\Controllers\User\IncomeController::class);
-    Route::resource('monthly_reports', \App\Http\Controllers\User\MonthlyReportController::class);
+// Route::group(['middleware' => 'isUser', 'prefix' => 'user', 'as' => 'user.'], function () {
+//     Route::get('dashboard', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('dashboard.index');
+//     Route::resource('currencies', \App\Http\Controllers\admin\CurrencyController::class);
+//     Route::resource('expenses', \App\Http\Controllers\User\ExpenseController::class);
+//     Route::resource('incomes', \App\Http\Controllers\User\IncomeController::class);
+//     Route::resource('monthly_reports', \App\Http\Controllers\User\MonthlyReportController::class);
 
-    // User Profile and Password Routes
-    Route::get('profile', [\App\Http\Controllers\UserController::class, 'UserProfile'])->name('profile');
-    Route::post('profile/store', [\App\Http\Controllers\UserController::class, 'UserProfileStore'])->name('profile.store');
-    Route::get('change-password', [\App\Http\Controllers\UserController::class, 'UserChangePassword'])->name('change.password');
-});
+//     // User Profile and Password Routes
+//     Route::get('profile', [\App\Http\Controllers\UserController::class, 'UserProfile'])->name('profile');
+//     Route::post('profile/store', [\App\Http\Controllers\UserController::class, 'UserProfileStore'])->name('profile.store');
+//     Route::get('change-password', [\App\Http\Controllers\UserController::class, 'UserChangePassword'])->name('change.password');
+// });
 
 
 Auth::routes();
-Route::get('/user/dashbord', function () {
-    return view('user.user_dashboard');
-})->name('user.dashboard');
+// Route::get('/user/dashbord', function () {
+//     return view('user.user_dashboard');
+// })->name('user.dashboard');
 // Route::get('/home', function () {
 //     return view('home');
 // })->name('home');
