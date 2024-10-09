@@ -1,10 +1,21 @@
- Kise Expense application
+Kise Expense application
 
 ## Screenshots
 
-![preview img](/preview.png)
+register
+![preview img](/register.jpg)
 
-![preview img](/preview2.png)
+login
+![preview img](/login.jpg)
+
+dashboard
+![preview img](/dashboard.jpg)
+
+add income
+![preview img](/addIncome.jpg)
+
+profile view and edit
+![preview img](/updateProfile.jpg)
 
 ## Run Locally
 
@@ -35,9 +46,11 @@ Go to the project directory
 ```
 
 #### Login
+
 as an admin
+
 -   email = admin@gmail.com
 -   password = admin123
-as an user
+    as an user
 -   email = user@gmail.com
 -   password = user1234
