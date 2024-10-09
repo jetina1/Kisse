@@ -76,3 +76,22 @@
     </div>
 </div>
 @include('body.footer')
+<style>
+    /* Space between header and login section */
+    header {
+        margin-bottom: 100px;
+        /* Adjust as per your needs */
+    }
+
+    /* Space between login section and footer */
+    .login-section {
+        margin-bottom: 100px;
+        /* Adjust as per your needs */
+    }
+
+    /* Footer spacing */
+    footer {
+        margin-top: 100px;
+        /* Adjust as per your needs */
+    }
+</style>

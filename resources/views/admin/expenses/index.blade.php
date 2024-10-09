@@ -86,7 +86,7 @@
         </div>
     </div>
 </body>
-<<<<<<< HEAD=======>>>>>>> 067929b83a2e91f856f03077a2ed06c8d4519cd1
-    @include('body.footer')
+
+@include('body.footer')
 
 </html>

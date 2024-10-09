@@ -14,6 +14,7 @@ class UserController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function index()
     {
@@ -26,6 +27,7 @@ class UserController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function create()
     {
@@ -39,13 +41,14 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function store(StoreUserRequest $request)
     {
         $user = User::create($request->validated() + ['password' => bcrypt($request->password)]);
         $user->roles()->sync($request->input('roles'));
 
-        return redirect()->route('admin.users.index')->with('message', "Successfully Created !");   
+        return redirect()->route('admin.users.index')->with('message', "Successfully Created !");
     }
 
     /**
@@ -53,12 +56,13 @@ class UserController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function edit(User $user)
     {
         $roles = Role::pluck('title', 'id');
 
-        return view('admin.users.edit', compact('user','roles'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -67,13 +71,14 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return mixed
      */
-    public function update(UpdateUserRequest $request,User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->validated() + ['password' => bcrypt($request->password)]);
         $user->roles()->sync($request->input('roles'));
 
-        return redirect()->route('admin.users.index')->with('message',  "Successfully updated !");
+        return redirect()->route('admin.users.index')->with('message', "Successfully updated !");
     }
 
     /**
@@ -81,11 +86,12 @@ class UserController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function destroy(User $user)
     {
         $user->delete();
 
-        return redirect()->route('admin.users.index')->with('message',  "Successfully deleted !");
+        return redirect()->route('admin.users.index')->with('message', "Successfully deleted !");
     }
 }

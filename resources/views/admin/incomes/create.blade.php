@@ -43,23 +43,15 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="entry_date">entry date</label>
                                         <input class="form-control" id="entry_date" type="date" name="entry_date"
-                                            value="{{ old('entry_date') }}">
+                                            value="{{ old('entry_date') }}"
+                                            max="{{ \Carbon\Carbon::now()->toDateString() }}">
                                         @error('entry_date')<span class="text-danger">{{ $message }}</span>@enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="amount">Amount</label>
-                                        <input class="form-control" id="amount" type="number" name="amount"
-                                            value="{{ old('amount') }}">
-                                        @error('amount')<span class="text-danger">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
                             </div>

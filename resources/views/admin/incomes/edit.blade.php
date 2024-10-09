@@ -51,7 +51,8 @@
                                     <div class="form-group">
                                         <label for="entry_date">entry date</label>
                                         <input class="form-control" id="entry_date" type="date" name="entry_date"
-                                            value="{{ old('entry_date', $income->entry_date) }}">
+                                            value="{{ old('entry_date') }}"
+                                            max="{{ \Carbon\Carbon::now()->toDateString() }}">
                                         @error('entry_date')<span class="text-danger">{{ $message }}</span>@enderror
                                     </div>
                                 </div>

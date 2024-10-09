@@ -55,7 +55,8 @@
                                 <select name="roles[]" id="roles" class="form-control select2" multiple="multiple"
                                     required>
                                     @foreach($roles as $id => $role)
-                                        <option value="{{ $id }}" {{ (in_array($id, old('roles', [])) || isset($role) && $role->roles->contains($id)) ? 'selected' : '' }}>{{ $roles }}</option>
+                                        <option value="{{ $id }}" {{ (in_array($id, old('roles', []))) ? 'selected' : '' }}>
+                                            {{ $role }}</option>
                                     @endforeach
                                 </select>
                             </div>

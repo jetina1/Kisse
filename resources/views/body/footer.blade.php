@@ -62,12 +62,13 @@
                         </div>
                         <div class="widget-content">
                             <ul class="info-list clearfix">
-                                <li><i class="fas fa-map-marker-alt"></i>Flat 20, Reynolds Neck, North
-                                    Helenaville, FV77 8WS</li>
-                                <li><i class="fas fa-microphone"></i><a href="tel:23055873407">+2(305)
-                                        587-3407</a></li>
-                                <li><i class="fas fa-envelope"></i><a
-                                        href="mailto:info@example.com">info@example.com</a></li>
+                                <li style="color:white"><i class="fas fa-map-marker-alt"
+                                        style="color:white"></i>Megenagna Sileshi Building,
+                                    11th Floor, Addis Ababa 1000</li>
+                                <li><i class="fas fa-microphone" style="color:white"></i><a href="tel:0911121314"
+                                        style="color:white">+251911121314</a></li>
+                                <li><i class="fas fa-envelope" style="color:white"></i><a href="mailto:info@example.com"
+                                        style="color:white">info@example.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -94,7 +95,7 @@
 </footer>
 <style>
     .main-footer {
-        background-color: #1d1d1f;
+        background-color: #4169E1;
         /* Example background color */
     }
 
@@ -105,23 +106,23 @@
 
     .footer-widget h3 {
         font-size: 18px;
-        color: #669;
+        color: white;
         margin-bottom: 15px;
     }
 
     .footer-widget p {
         font-size: 14px;
-        color: #669;
+        color: white;
         line-height: 1.5;
     }
 
     .footer-widget a {
-        color: #669;
+        color: white;
         transition: all 0.3s ease;
     }
 
     .footer-widget a:hover {
-        color: #007bff;
+        color: #669;
         /* Example hover color */
     }
 
@@ -133,16 +134,16 @@
 
     .copyright p {
         font-size: 14px;
-        color: #669;
+        color: white;
     }
 
     .footer-nav a {
-        color: #669;
+        color: white;
         transition: all 0.3s ease;
     }
 
     .footer-nav a:hover {
-        color: #007bff;
+        color: #669;
         /* Example hover color */
     }
 
